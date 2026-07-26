@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Plano de fortalecimento lombar e core para correr 12 km sem fraqueza no glúteo médio, com cronograma semanal e exercícios ilustrados." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>" />
+    <title>Plano Lombar + Corrida 🏃</title>
+    <style>
+        /* ===== RESET E BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            padding: 32px 16px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 40px 32px;
+            box-shadow: 0 30px 80px rgba(0, 20, 40, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== CABEÇALHO ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0b2b44;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 span {
+            background: linear-gradient(135deg, #1a6bb0, #0b2b44);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-left: 12px;
+            letter-spacing: 0;
+        }
+
+        .badge-top {
+            background: #d4edda;
+            color: #0b5e2e;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 4px 0 20px;
+            border: 1px solid #b7dfb9;
+        }
+
+        /* ===== REGRA DE OURO ===== */
+        .regra {
+            background: #fff7e6;
+            border-left: 6px solid #f5a623;
+            padding: 18px 24px;
+            border-radius: 16px;
+            margin: 16px 0 32px;
+            font-weight: 500;
+            color: #6b4c1a;
+            font-size: 1rem;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(245, 166, 35, 0.10);
+        }
+
+        .regra strong {
+            color: #b1530f;
+        }
+
+        /* ===== GRADE DE EXERCÍCIOS ===== */
+        .exercicios-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .exercicios-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ===== CARD DO EXERCÍCIO ===== */
+        .card {
+            background: #fafcff;
+            border-radius: 28px;
+            border: 1px solid #e9edf4;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(26, 107, 176, 0.08);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f5f8fc;
+            border-bottom: 2px solid #eef2f7;
+        }
+
+        .card-body {
+            padding: 20px 22px 24px;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0b2b44;
+            margin-bottom: 4px;
+        }
+
+        .card-body .foco {
+            display: inline-block;
+            background: #e7f0fa;
+            color: #1a4a6b;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 2px 16px;
+            border-radius: 40px;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .card-body .dicas {
+            margin-top: 10px;
+            padding-top: 12px;
+            border-top: 1px solid #eef3fa;
+        }
+
+        .card-body .dicas p {
+            font-size: 0.9rem;
+            color: #3d5670;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-body .dicas p::before {
+            content: "•";
+            color: #1a6bb0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .card-body .dicas strong {
+            color: #0b2b44;
+        }
+
+        /* ===== CRONOGRAMA ===== */
+        .cronograma {
+            background: #e7f0fa;
+            border-radius: 28px;
+            padding: 24px 28px;
+            margin: 12px 0 28px;
+            overflow-x: auto;
+        }
+
+        .cronograma h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0b2b44;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cronograma table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 480px;
+        }
+
+        .cronograma th {
+            text-align: left;
+            padding: 8px 6px 8px 0;
+            color: #0b2b44;
+            font-weight: 700;
+            width: 70px;
+        }
+
+        .cronograma td {
+            padding: 10px 6px 10px 0;
+            border-bottom: 1px solid #cddcec;
+        }
+
+        .cronograma .tag {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .tag-treino {
+            background: #cfe2ff;
+            color: #004080;
+        }
+
+        .tag-corrida {
+            background: #d4edda;
+            color: #0b5e2e;
+        }
+
+        .tag-descanso {
+            background: #f1f3f5;
+            color: #5a6a7a;
+        }
+
+        .tag-corrida-longa {
+            background: #d4edda;
+            color: #0b5e2e;
+            border: 1px solid #8fc99a;
+        }
+
+        /* ===== PRAZO ===== */
+        .prazo {
+            background: linear-gradient(135deg, #0b2b44, #1a4a6b);
+            color: #fff;
+            border-radius: 28px;
+            padding: 24px 30px;
+            margin-top: 12px;
+        }
+
+        .prazo h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .prazo p {
+            opacity: 0.92;
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        .prazo strong {
+            color: #ffd966;
+        }
+
+        /* ===== RODAPÉ ===== */
+        .footer {
+            margin-top: 32px;
+            color: #7a8fa5;
+            font-size: 0.85rem;
+            text-align: center;
+            border-top: 1px solid #e5ecf5;
+            padding-top: 24px;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: #1a6bb0;
+            text-decoration: none;
+        }
+
+        /* ===== SEM IMAGEM (fallback do card) ===== */
+        .card-noimg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, #eef4fb, #dde9f6);
+            border-bottom: 2px solid #eef2f7;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 16px;
+                border-radius: 32px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header h1 span {
+                font-size: 0.65rem;
+                padding: 3px 14px;
+                margin-left: 8px;
+            }
+
+            .card-body {
+                padding: 16px 18px 20px;
+            }
+
+            .cronograma {
+                padding: 18px 16px;
+            }
+
+            .prazo {
+                padding: 18px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== CABEÇALHO ===== -->
+        <div class="header">
+            <h1>
+                🏃‍♂️ Plano Lombar
+                <span>12 km sem fraqueza</span>
+            </h1>
+        </div>
+
+        <div class="badge-top">🎯 Foco: glúteo médio esquerdo · core · caseiro</div>
+
+        <!-- ===== REGRA DE OURO ===== -->
+        <div class="regra">
+            <strong>⚡ Regra de Ouro:</strong> Se a lombar doer (aguda), pare. Se queimar o glúteo, continue.
+            NUNCA fortaleça no mesmo dia da corrida longa.
+        </div>
+
+        <!-- ===== EXERCÍCIOS ===== -->
+        <div class="exercicios-grid">
+
+            <!-- 1. STIFF UNILATERAL -->
+            <div class="card">
+                <div class="card-noimg">🏋️</div>
+                <div class="card-body">
+                    <h3>🏋️ Stiff Unilateral</h3>
+                    <span class="foco">Foco: Glúteo e Posterior</span>
+                    <div class="dicas">
+                        <p><strong>Coluna reta</strong> — mantenha o alinhamento durante todo o movimento.</p>
+                        <p><strong>Pés estabilizados</strong> — base firme para proteger a lombar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. AGACHAMENTO COM BOLA -->
+            <div class="card">
+                <img src="images/agachamento-bola.png" alt="Agachamento com bola de yoga apoiada na parede, foco em quadríceps e glúteo" loading="lazy" />
+                <div class="card-body">
+                    <h3>🏋️ Agachamento com Bola</h3>
+                    <span class="foco">Foco: Quadríceps e Glúteo</span>
+                    <div class="dicas">
+                        <p><strong>Coluna neutra</strong> — mantenha as costas apoiadas na bola.</p>
+                        <p><strong>Calcanhar esquerdo forçando o chão</strong> — ative o glúteo na subida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ABDUÇÃO COM ELÁSTICO -->
+            <div class="card">
+                <img src="images/abducao-elastico.png" alt="Abdução de quadril deitado de lado com elástico, foco no glúteo médio" loading="lazy" />
+                <div class="card-body">
+                    <h3>🏋️ Abdução com Elástico</h3>
+                    <span class="foco">Foco: Glúteo Médio</span>
+                    <div class="dicas">
+                        <p><strong>Controle o movimento</strong> — execute de forma lenta e sem impulso.</p>
+                        <p><strong>Não deixe o quadril cair</strong> — mantenha o alinhamento do corpo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. PRANCHA COM BOLA -->
+            <div class="card">
+                <img src="images/prancha-bola.png" alt="Prancha com os pés apoiados em bola de yoga, foco no core estabilizador" loading="lazy" />
+                <div class="card-body">
+                    <h3>🏋️ Prancha com Bola</h3>
+                    <span class="foco">Foco: Core Estabilizador</span>
+                    <div class="dicas">
+                        <p><strong>Corpo reto e alinhado</strong> — cabeça, tronco e pernas em linha.</p>
+                        <p><strong>Não deixe o quadril cair</strong> — mantenha o core ativo o tempo todo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. REMADA BARRA W -->
+            <div class="card">
+                <img src="images/remada-barra-w.png" alt="Remada curvada com barra W, foco em costas e cadeia posterior" loading="lazy" />
+                <div class="card-body">
+                    <h3>🏋️ Remada Curvada (Barra W)</h3>
+                    <span class="foco">Foco: Costas e Cadeia Posterior</span>
+                    <div class="dicas">
+                        <p><strong>Coluna reta</strong> — mantenha a coluna neutra e o peito aberto.</p>
+                        <p><strong>Joelhos flexionados</strong> — proteja as articulações.</p>
+                        <p><strong>Controle o movimento</strong> — evite balanços, foque na contração dorsal.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== CRONOGRAMA ===== -->
+        <div class="cronograma">
+            <h3>📅 Cronograma Semanal</h3>
+            <table>
+                <tr><th>Seg</th><td><span class="tag tag-treino">🏋️ Fortalecimento</span></td></tr>
+                <tr><th>Ter</th><td><span class="tag tag-corrida">🏃 Corrida 12 km</span></td></tr>
+                <tr><th>Qua</th><td><span class="tag tag-treino">🏋️ Fortalecimento</span></td></tr>
+                <tr><th>Qui</th><td><span class="tag tag-corrida">🏃 Corrida 5 km (leve)</span></td></tr>
+                <tr><th>Sex</th><td><span class="tag tag-descanso">🛌 Descanso</span></td></tr>
+                <tr><th>Sáb</th><td><span class="tag tag-treino">🏋️ Fortalecimento</span></td></tr>
+                <tr><th>Dom</th><td><span class="tag tag-corrida-longa">🏃 Corrida longa (tente 12 km sem pausa)</span></td></tr>
+            </table>
+        </div>
+
+        <!-- ===== PRAZO ===== -->
+        <div class="prazo">
+            <h3>📆 Prazo esperado</h3>
+            <p>
+                <strong>2 semanas:</strong> a fraqueza no 8º km começa a demorar mais para aparecer.<br />
+                <strong>4 semanas:</strong> você corre 12 km com a perna esquerda firme do início ao fim.
+            </p>
+        </div>
+
+        <!-- ===== RODAPÉ ===== -->
+        <div class="footer">
+            🔹 Imagens geradas por IA · Plano personalizado para fortalecimento em casa<br />
+            Feito com 💙 para você correr sem dor
+        </div>
+
+    </div>
+
+</body>
+</html>
